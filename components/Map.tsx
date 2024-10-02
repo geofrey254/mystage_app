@@ -6,6 +6,8 @@ import {
   LoadScript,
   Marker,
   InfoWindow,
+  DirectionsService,
+  DirectionsRenderer,
 } from "@react-google-maps/api";
 import { busStages } from "@/constants"; // Ensure busStages has an array of bus stages
 import mapStyle from "./mapStyle"; // Your custom map styles
@@ -47,7 +49,7 @@ const Map = () => {
             placeholder="Where are you headed to?"
             value={searchTerm}
             onChange={handleSearchChange}
-            className="z-10 p-2 ps-8 border-2 border-[#ffa800] rounded-3xl focus:outline-none focus:ring-0 focus:border-transparent shadow-md shadow-[#ffa800] w-[50vh] md:w-[80vh] h-[7vh] md:h-[5vh]"
+            className="z-10 p-2 ps-8 border-2 border-[#ffa800] focus:outline-none focus:ring-0 focus:border-transparent shadow-md shadow-[#3a2b0d] w-[50vh] md:w-[80vh] h-[7vh] md:h-[5vh]"
           />
         </div>
         <GoogleMap

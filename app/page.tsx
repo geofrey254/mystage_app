@@ -1,12 +1,12 @@
-import dynamic from "next/dynamic";
+import Landing from "@/components/Landing";
 
 export default function Home() {
-  const Map = dynamic(() => import("@/components/Map"), {
-    ssr: false,
-  });
+  // const Map = dynamic(() => import("@/components/Map"), {
+  //   ssr: false,
+  // });
   return (
     <main className="">
-      <Map />
+      <Landing />
     </main>
   );
 }
