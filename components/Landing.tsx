@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FaMoneyBill1Wave } from "react-icons/fa6";
+import { TbViewfinder } from "react-icons/tb";
 
 function Landing() {
   return (
-    <section className="bg-[#f8d082c2] w-full flex justify-center items-center h-[80vh] md:h-[90vh] p-8 md:p-0">
+    <section className="bg-[#f8d082c2] w-full flex justify-center items-center max-[480px]:h-[85vh] md:h-[90vh] p-8 md:p-0">
       <div className="container grid grid-cols-1 md:grid-cols-2 items-center">
         <div className="maps flex flex-col gap-7 md:gap-8">
           <div className="title">
@@ -14,7 +16,7 @@ function Landing() {
                 Find Your Stop
               </span>
             </h3>
-            <h1 className="text-4xl md:text-5xl xl:text-6xl lato-black text-[#392a0b]">
+            <h1 className="max-[400px]:text-4xl max-[480px]:text-5xl md:text-5xl xl:text-6xl lato-black text-[#392a0b]">
               You Want a Bus, Not a Scavenger Hunt!
             </h1>
           </div>
@@ -26,19 +28,21 @@ function Landing() {
             stage for you. ✨ No more wandering or second-guessing—just enter
             your destination, and we{"'"}ll guide you directly there.
           </p>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-5">
             <Link
               href="/Map"
-              className="bg-[#ffa800] hover:bg-[#f8da9a] border-2 border-[#3a2b0d] w-full md:w-1/2 xl:w-1/4 text-center p-2 text-lg font-bold text-white shadow-lg"
+              className="bg-[#ffa800] flex justify-center gap-4 items-center hover:bg-[#f8da9a] border-2 border-[#3a2b0d] w-full md:w-1/2 xl:w-1/4 text-center p-2 text-md font-bold text-white shadow-lg"
             >
               Find your way
+              <TbViewfinder size={20} />
             </Link>
 
             <Link
-              href="/Map"
-              className="bg-[#fef3dc] border-2 border-[#3a2b0d94] w-full md:w-1/2 xl:w-1/4 text-center p-2 text-lg font-bold text-[#ffa800]  shadow-lg"
+              href="/Buy-Coffee"
+              className="bg-[#fef3dc] flex justify-center gap-4 items-center border-2 border-[#3a2b0d94] w-full md:w-1/2 xl:w-1/4 text-center p-2 text-md font-bold text-[#ffa800]  shadow-lg"
             >
-              Fuel Me Up!
+              Feed My Coffee Habit
+              <FaMoneyBill1Wave size={20} />
             </Link>
           </div>
         </div>

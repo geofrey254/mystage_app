@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+  scrollbar-color: #ffa800 white;
+}
+
 body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
@@ -102,4 +106,47 @@ body {
 
 .mappy {
   filter: drop-shadow(2px 2px 5px #ffa800);
+}
+
+@keyframes loadanim {
+  0% {
+    transform: scale(120%);
+  }
+
+  50% {
+    transform: scale(90%);
+  }
+
+  100% {
+    transform: scale(120%);
+  }
+}
+
+@keyframes logo {
+  0% {
+    transform: scale(100%);
+  }
+
+  50% {
+    transform: scale(80%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+.loading-img {
+  animation: loadanim .5s infinite ease-in-out;
+}
+
+.loadlogo {
+  animation: logo 2s infinite ease-in-out;
+}
+
+.gm-style-iw button[title="Close"] {
+  width: 50px !important;
+  height: 20px !important;
+  top: 10px !important;
+  right: 10px !important;
 }
