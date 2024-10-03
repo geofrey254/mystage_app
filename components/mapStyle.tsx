@@ -20,7 +20,7 @@ const mapStyle = [
     featureType: "poi.business",
     stylers: [
       {
-        visibility: "off",
+        visibility: "on",
       },
     ],
   },

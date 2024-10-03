@@ -47,22 +47,20 @@ export const busStages = [
     latitude: -1.2840904106799633,
     longitude: 36.82553720354892,
   },
-
   {
     id: 7,
     name: "Super Metro",
-    description:
-      "Westlands, Chiromo, Kikuyu, Kinoo, Muthiga, Uthiru, Co-operative, Regen",
-    latitude: -1.2844595345281486,
-    longitude: 36.82553720354892,
+    description: "Juja, Thika, Ruiru, Roysambu",
+    latitude: -1.2844699295889355,
+    longitude: 36.82516604453403,
   },
 
   {
     id: 8,
     name: "NNK",
     description: "Juja, Ruiru, Thika, Roysambu",
-    latitude: -1.2849938962100533,
-    longitude: 36.826140894310775,
+    latitude: -1.2849928563203128,
+    longitude: 36.82613325602014,
   },
 
   {
@@ -70,8 +68,8 @@ export const busStages = [
     name: "City Shuttle",
     description:
       "Westlands, Chiromo, Kikuyu, Kinoo, Muthiga, Uthiru, Co-operative, Regen",
-    latitude: -1.283722750498904,
-    longitude: 36.826140894310775,
+    latitude: -1.28376198014972,
+    longitude: 36.82511992855586,
   },
 
   {
