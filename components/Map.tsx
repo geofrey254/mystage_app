@@ -25,7 +25,8 @@ const Map = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredStages, setFilteredStages] = useState(busStages);
 
-  const googleMapsKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const googleMapsKey: string =
+    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
   // Handle search input change
   const handleSearchChange = (e) => {
