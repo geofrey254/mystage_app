@@ -20,8 +20,16 @@ const center = {
   lng: 36.82601472668886,
 };
 
+interface Stage {
+  id: number;
+  name: string;
+  description: string;
+  latitude: number;
+  longitude: number;
+}
+
 const Map = () => {
-  const [selectedStage, setSelectedStage] = useState(null);
+  const [selectedStage, setSelectedStage] = useState<Stage | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredStages, setFilteredStages] = useState(busStages);
 
