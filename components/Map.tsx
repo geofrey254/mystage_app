@@ -1,4 +1,3 @@
-// components/Map.js
 "use client";
 import React, { useState, useEffect } from "react";
 import {
@@ -41,20 +40,47 @@ const Map = () => {
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
   // Get user's current location
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setCurrentLocation({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          });
-        },
-        (error) => {
-          console.error("Error obtaining location", error);
-        }
-      );
+  const getCurrentLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by this browser.");
+      return;
     }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setCurrentLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+      },
+      (error) => {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            alert(
+              "Permission denied. Please allow location access in your browser settings."
+            );
+            break;
+          case error.POSITION_UNAVAILABLE:
+            alert(
+              "Location information is unavailable. Please try again later."
+            );
+            break;
+          case error.TIMEOUT:
+            alert(
+              "The request to get your location timed out. Please try again."
+            );
+            break;
+
+          default:
+            alert("An unexpected error occurred.");
+            break;
+        }
+      }
+    );
+  };
+
+  useEffect(() => {
+    getCurrentLocation();
   }, []);
 
   // Handle search input change
@@ -81,6 +107,12 @@ const Map = () => {
                 onChange={handleSearchChange}
                 className="z-10 p-2 md:p-6 rounded-md ps-8 border-2 border-[#ffa800] focus:outline-none focus:ring-0 focus:border-transparent shadow-md shadow-[#3a2b0d] w-[50vh] md:w-[80vh] h-[7vh] md:h-[5vh]"
               />
+              <button
+                onClick={getCurrentLocation}
+                className="ml-2 p-2 bg-[#ffa800] text-white rounded-md shadow-md"
+              >
+                Get Current Location
+              </button>
             </div>
             <GoogleMap
               mapContainerStyle={containerStyle}
@@ -104,8 +136,8 @@ const Map = () => {
                   }}
                   onCloseClick={() => setSelectedStage(null)}
                   options={{
-                    pixelOffset: new window.google.maps.Size(0, -30), // Adjusts the positioning of the InfoWindow relative to the marker
-                    maxWidth: 2000, // Set a max width for the InfoWindow
+                    pixelOffset: new window.google.maps.Size(0, -30),
+                    maxWidth: 2000,
                   }}
                 >
                   <div className="p-4">
@@ -119,7 +151,7 @@ const Map = () => {
                 <Marker
                   position={currentLocation}
                   icon={{
-                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png", // Optional: customize the marker icon for user's location
+                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
                   }}
                   onClick={() => setSelectedStage(null)}
                 />
