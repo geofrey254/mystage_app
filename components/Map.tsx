@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   GoogleMap,
   LoadScript,
@@ -39,7 +39,31 @@ const Map = () => {
   const googleMapsKey: string =
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
-  // Get user's current location
+  const mapRef = useRef<google.maps.Map | null>(null);
+
+  const haversineDistance = (coords1, coords2) => {
+    const toRad = (value) => (value * Math.PI) / 180;
+    const R = 6371; // Radius of the Earth in kilometers
+
+    const lat1 = coords1.lat;
+    const lon1 = coords1.lng;
+    const lat2 = coords2.lat;
+    const lon2 = coords2.lng;
+
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) *
+        Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    return R * c; // Distance in kilometers
+  };
+
   const getCurrentLocation = () => {
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by this browser.");
@@ -83,7 +107,33 @@ const Map = () => {
     getCurrentLocation();
   }, []);
 
-  // Handle search input change
+  useEffect(() => {
+    if (currentLocation) {
+      const nearestStage = filteredStages.reduce((prev, curr) => {
+        const prevDistance = haversineDistance(currentLocation, {
+          lat: prev.latitude,
+          lng: prev.longitude,
+        });
+        const currDistance = haversineDistance(currentLocation, {
+          lat: curr.latitude,
+          lng: curr.longitude,
+        });
+        return currDistance < prevDistance ? curr : prev;
+      });
+
+      // Center the map and zoom in on the nearest stage
+      if (nearestStage) {
+        if (mapRef.current) {
+          mapRef.current.setCenter({
+            lat: nearestStage.latitude,
+            lng: nearestStage.longitude,
+          });
+          mapRef.current.setZoom(18); // Adjust the zoom level as needed
+        }
+      }
+    }
+  }, [currentLocation, filteredStages]);
+
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
@@ -119,6 +169,9 @@ const Map = () => {
               center={currentLocation || center}
               zoom={16}
               options={{ styles: mapStyle, mapTypeId: "satellite" }}
+              onLoad={(map) => {
+                mapRef.current = map; // Save the map reference
+              }}
             >
               {filteredStages.map((stage) => (
                 <Marker

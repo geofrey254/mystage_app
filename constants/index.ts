@@ -96,4 +96,13 @@ export const busStages = [
     latitude: -1.245784220890323,
     longitude: 36.679428115335355,
   },
+
+  {
+    id: 12,
+    name: "Kenya Library",
+    description:
+      "Kikuyu, Gitaru, Mlango, Kampala, Wangige, Regen, Southern ByPass",
+    latitude: -1.2943488002048675,
+    longitude: 36.81115009864056,
+  },
 ];
