@@ -130,6 +130,12 @@ const Map = () => {
           mapRef.current.setZoom(18); // Adjust the zoom level as needed
         }
       }
+    } else if (currentLocation) {
+      // Center the map on current location if no filtered stages are available
+      if (mapRef.current) {
+        mapRef.current.setCenter(currentLocation);
+        mapRef.current.setZoom(16); // Default zoom level for current location
+      }
     } else {
       // Reset selected stage if no stages are available
       setSelectedStage(null);
@@ -175,7 +181,7 @@ const Map = () => {
               mapContainerStyle={containerStyle}
               center={currentLocation || center}
               zoom={16}
-              options={{ styles: mapStyle, mapTypeId: "satellite" }}
+              options={{ styles: mapStyle, mapTypeId: "hybrid" }}
               onLoad={(map) => {
                 mapRef.current = map; // Save the map reference
               }}

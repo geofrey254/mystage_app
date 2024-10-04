@@ -84,7 +84,7 @@ export const busStages = [
     id: 11,
     name: "WhiteHouse Stage / Regen",
     description:
-      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, ABC Place, CAK, Waruku, Kangemi",
+      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, ABC Place, CAK, Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
     latitude: -1.2457468060210664,
     longitude: 36.67973824898572,
   },
@@ -98,11 +98,46 @@ export const busStages = [
   },
 
   {
-    id: 12,
+    id: 13,
     name: "Kenya Library",
     description:
-      "Kikuyu, Gitaru, Mlango, Kampala, Wangige, Regen, Southern ByPass",
+      "Kikuyu, Gitaru, Mlango, Kampala, Wangige, Regen, Southern ByPass, Waruku, Kangemi",
     latitude: -1.2943488002048675,
     longitude: 36.81115009864056,
+  },
+
+  {
+    id: 14,
+    name: "KNH",
+    description:
+      "Kawangware, Junction, Wanyee, Kabiria, Highrise, Ngumo, Prestige",
+    latitude: -1.2975579258027243,
+    longitude: 36.80554856762691,
+  },
+
+  // Westlands
+  {
+    id: 14,
+    name: "Westlands Stage",
+    description: "Kikuyu, Kinoo, Muthiga, Uthiru, Co-operative, Regen",
+    latitude: -1.2645108136763379,
+    longitude: 36.80150009448901,
+  },
+
+  {
+    id: 15,
+    name: "Westlands Stage 2",
+    description: "Kangemi, N Market, CAK, Waruku, Kianda, AFRALTI",
+    latitude: -1.2645933643637255,
+    longitude: 36.80158994730043,
+  },
+
+  {
+    id: 16,
+    name: "Westlands Stage 3",
+    description:
+      "CBD, Nairobi Town, Museum Hill, Kempinski, GPO, University of Nairobi(UON)",
+    latitude: -1.265059859178683,
+    longitude: 36.80245301240948,
   },
 ];
