@@ -42,42 +42,23 @@ const Map = () => {
 
   // Get user's current location
   useEffect(() => {
-    const handleSuccess = (position: GeolocationPosition) => {
-      setCurrentLocation({
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      });
-    };
-
-    const handleError = (error: GeolocationPositionError) => {
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          alert("Location permission denied. Please enable location access.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          alert("Location information is unavailable.");
-          break;
-        case error.TIMEOUT:
-          alert("Request for location timed out.");
-          break;
-        default:
-          console.error("Error obtaining location: ", error);
-      }
-    };
-
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(handleSuccess, handleError, {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0,
-      });
-    } else {
-      alert("Geolocation is not supported by this browser.");
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setCurrentLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.error("Error obtaining location", error);
+        }
+      );
     }
   }, []);
 
   // Handle search input change
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
 
@@ -103,12 +84,9 @@ const Map = () => {
             </div>
             <GoogleMap
               mapContainerStyle={containerStyle}
-              center={center}
+              center={currentLocation || center}
               zoom={16}
-              options={{
-                styles: mapStyle,
-                mapTypeId: "satellite", // Set the default map type to satellite
-              }}
+              options={{ styles: mapStyle, mapTypeId: "satellite" }}
             >
               {filteredStages.map((stage) => (
                 <Marker
