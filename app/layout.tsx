@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Loading from "./loading";
 import { Suspense } from "react";
+import Footer from "@/components/Footer";
 
 import type { Viewport } from "next";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Footer />
       </body>
     </html>
   );
