@@ -94,7 +94,6 @@ const Map = () => {
               "The request to get your location timed out. Please try again."
             );
             break;
-
           default:
             alert("An unexpected error occurred.");
             break;
@@ -108,7 +107,7 @@ const Map = () => {
   }, []);
 
   useEffect(() => {
-    if (currentLocation) {
+    if (currentLocation && filteredStages.length > 0) {
       const nearestStage = filteredStages.reduce((prev, curr) => {
         const prevDistance = haversineDistance(currentLocation, {
           lat: prev.latitude,
@@ -131,6 +130,9 @@ const Map = () => {
           mapRef.current.setZoom(18); // Adjust the zoom level as needed
         }
       }
+    } else {
+      // Reset selected stage if no stages are available
+      setSelectedStage(null);
     }
   }, [currentLocation, filteredStages]);
 
@@ -142,6 +144,11 @@ const Map = () => {
       stage.description.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredStages(filtered);
+
+    // If there are no filtered stages, reset the selected stage
+    if (filtered.length === 0) {
+      setSelectedStage(null);
+    }
   };
 
   return (
@@ -173,13 +180,19 @@ const Map = () => {
                 mapRef.current = map; // Save the map reference
               }}
             >
-              {filteredStages.map((stage) => (
-                <Marker
-                  key={stage.id}
-                  position={{ lat: stage.latitude, lng: stage.longitude }}
-                  onClick={() => setSelectedStage(stage)}
-                />
-              ))}
+              {filteredStages.length > 0 ? (
+                filteredStages.map((stage) => (
+                  <Marker
+                    key={stage.id}
+                    position={{ lat: stage.latitude, lng: stage.longitude }}
+                    onClick={() => setSelectedStage(stage)}
+                  />
+                ))
+              ) : (
+                <div className="text-white text-lg text-center">
+                  No results found.
+                </div>
+              )}
 
               {selectedStage && (
                 <InfoWindow
