@@ -170,12 +170,6 @@ const Map = () => {
                 onChange={handleSearchChange}
                 className="z-10 p-2 md:p-6 rounded-md ps-8 border-2 border-[#ffa800] focus:outline-none focus:ring-0 focus:border-transparent shadow-md shadow-[#3a2b0d] w-[50vh] md:w-[80vh] h-[7vh] md:h-[5vh]"
               />
-              <button
-                onClick={getCurrentLocation}
-                className="ml-2 p-2 bg-[#ffa800] text-white rounded-md shadow-md"
-              >
-                Get Current Location
-              </button>
             </div>
             <GoogleMap
               mapContainerStyle={containerStyle}
