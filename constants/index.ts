@@ -79,4 +79,21 @@ export const busStages = [
     latitude: -1.2853378123841868,
     longitude: 36.82632107879962,
   },
+
+  {
+    id: 11,
+    name: "WhiteHouse Stage / Regen",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, ABC Place, CAK, Waruku, Kangemi",
+    latitude: -1.2457468060210664,
+    longitude: 36.67973824898572,
+  },
+
+  {
+    id: 12,
+    name: "WhiteHouse Stage",
+    description: "Kikuyu, Gitaru, Mlango, Kampala, Wangige",
+    latitude: -1.245784220890323,
+    longitude: 36.679428115335355,
+  },
 ];
