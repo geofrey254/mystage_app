@@ -140,4 +140,108 @@ export const busStages = [
     latitude: -1.265059859178683,
     longitude: 36.80245301240948,
   },
+
+  {
+    id: 17,
+    name: "Kwa Gadi",
+    description:
+      "Dagoretti Market, Kawangware, Center, Waithaka, Muthama, Car Wash, Chandaria, Gachui, Ruthimitu Primary",
+    latitude: -1.2766585692686894,
+    longitude: 36.68655815187043,
+  },
+
+  // Kikuyu Road
+  // Kwa gadi
+  {
+    id: 17,
+    name: "Kwa Gadi",
+    description:
+      "Dagoretti Market, Kawangware, Center, Waithaka, Muthama, Car Wash, Chandaria, Gachui, Ruthimitu Primary",
+    latitude: -1.2766585692686894,
+    longitude: 36.68655815187043,
+  },
+
+  {
+    id: 18,
+    name: "Kwa Gadi",
+    description:
+      "Kikuyu Campus, Thogoto, Kihunguro, Approved, Kikuyu, St.Teresa, Kikuyu Hospital, Alliance, Gardens",
+    latitude: -1.2766103126595856,
+    longitude: 36.68638054057218,
+  },
+
+  // Approved
+  {
+    id: 19,
+    name: "Kwa Gadi",
+    description:
+      "Kikuyu Campus, Thogoto, Kihunguro, Kikuyu, St.Teresa, Kikuyu Hospital, Alliance, Gardens",
+    latitude: -1.2738929890221864,
+    longitude: 36.68443123967285,
+  },
+
+  // Thogoto
+  {
+    id: 20,
+    name: "Thogoto Stage / Kihunguro",
+    description:
+      "Kikuyu Campus, Kikuyu, St.Teresa, Kikuyu Hospital, Alliance, Gardens",
+    latitude: -1.2682507053782273,
+    longitude: 36.67876913527362,
+  },
+
+  {
+    id: 21,
+    name: "Thogoto Stage / Kihunguro",
+    description:
+      "Dagoretti Market, Kawangware, Center, Waithaka, Approved, Kwa gadi, Muthama, Car Wash, Chandaria, Gachui, Ruthimitu Primary",
+    latitude: -1.2682533612980487,
+    longitude: 36.67907009848232,
+  },
+
+  // Kikuyu Campus
+  {
+    id: 22,
+    name: "Kikuyu Campus",
+    description:
+      "Dagoretti Market, Kawangware, Thogoto, Center, Waithaka, Approved, Kwa gadi, Muthama, Car Wash, Chandaria, Gachui, Ruthimitu Primary",
+    latitude: -1.2654010756634333,
+    longitude: 36.67384550676457,
+  },
+
+  {
+    id: 23,
+    name: "Kikuyu Campus",
+    description: "Kikuyu, St.Teresa, Kikuyu Hospital, Alliance, Gardens",
+    latitude: -1.2655406722470988,
+    longitude: 36.67393809007566,
+  },
+
+  // Kikuyu Stage
+  {
+    id: 24,
+    name: "Kikuyu Town",
+    description:
+      "Dagoretti Market, Thogoto, Center, Approved, Kwa gadi, Car Wash, Chandaria,",
+    latitude: -1.242825387681513,
+    longitude: 36.66459066673704,
+  },
+
+  {
+    id: 25,
+    name: "Kikuyu Town",
+    description:
+      "Kawangware, Center, Waithaka, Approved, Kwa gadi, Muthama, Gachui, Ruthimitu Primary",
+    latitude: -1.242627134295865,
+    longitude: 36.66473541446413,
+  },
+
+  {
+    id: 26,
+    name: "Kikuyu Town",
+    description:
+      "Nairobi Town, Muthiga, Regen, Mlango, Gitaru, Kampala, Uthiru, Cooperative, Westlands, GPO, Museum Hill, Safaricom, ABC Place, CAK, Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2428367407487513,
+    longitude: 36.664749462217735,
+  },
 ];
