@@ -141,15 +141,6 @@ export const busStages = [
     longitude: 36.80245301240948,
   },
 
-  {
-    id: 17,
-    name: "Kwa Gadi",
-    description:
-      "Dagoretti Market, Kawangware, Center, Waithaka, Muthama, Car Wash, Chandaria, Gachui, Ruthimitu Primary",
-    latitude: -1.2766585692686894,
-    longitude: 36.68655815187043,
-  },
-
   // Kikuyu Road
   // Kwa gadi
   {
