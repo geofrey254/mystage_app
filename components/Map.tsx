@@ -81,7 +81,7 @@ const Map = () => {
         switch (error.code) {
           case error.PERMISSION_DENIED:
             alert(
-              "Permission denied. Please allow location access in your browser settings."
+              "Permission denied. Please allow location access in your browser settings"
             );
             break;
           case error.POSITION_UNAVAILABLE:

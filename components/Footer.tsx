@@ -12,7 +12,7 @@ function Footer() {
               &copy;{myDate.getFullYear()} <Link href="/">MyStage</Link>
             </h4>
           </div>
-          <div className="text-[#392a0b]">|</div>
+          <div className="text-[#392a0c]">|</div>
           <div>
             <Link
               href="/Privacy_Statement"

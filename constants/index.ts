@@ -229,7 +229,7 @@ export const busStages = [
 
   {
     id: 26,
-    name: "Kikuyu Town",
+    name: "Kikuyu Town Stage",
     description:
       "Nairobi Town, Muthiga, Regen, Mlango, Gitaru, Kampala, Uthiru, Cooperative, Westlands, GPO, Museum Hill, Safaricom, ABC Place, CAK, Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
     latitude: -1.2428367407487513,
