@@ -5,7 +5,7 @@ export default function Home() {
   //   ssr: false,
   // });
   return (
-    <main className="">
+    <main className="w-full">
       <Landing />
     </main>
   );

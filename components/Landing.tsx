@@ -6,7 +6,7 @@ import { TbViewfinder } from "react-icons/tb";
 
 function Landing() {
   return (
-    <section className="bg-[#f8d082c2] w-full flex justify-center items-center max-[480px]:h-[85vh] md:h-[85vh] p-8 md:p-0">
+    <section className="bg-[#f8d082c2] w-full flex justify-center items-center max-[480px]:h-[85vh] md:h-[90vh] xl:h-[100vh] p-8 md:p-12">
       <div className="container grid grid-cols-1 md:grid-cols-2 items-center">
         <div className="maps flex flex-col gap-7 md:gap-8">
           <div className="title">
@@ -38,7 +38,7 @@ function Landing() {
             </Link>
 
             <Link
-              href="/Buy-Coffee"
+              href="https://link.payd.one/my-stage-buy-me-coffee"
               className="bg-[#fef3dc] flex justify-center gap-4 items-center border-2 border-[#3a2b0d94] w-full md:w-1/2 xl:w-1/2 text-center p-2 text-md font-bold text-[#ffa800]  shadow-lg"
             >
               Feed My Coffee Habit

@@ -235,4 +235,15 @@ export const busStages = [
     latitude: -1.2428367407487513,
     longitude: 36.664749462217735,
   },
+
+  // Waiyaki way from muthiga open
+  {
+    id: 27,
+    name: "Muthiga Stage",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2491500958872377,
+    longitude: 36.684035064782165,
+  },
+  // Waiyaki way from muthiga close
 ];
