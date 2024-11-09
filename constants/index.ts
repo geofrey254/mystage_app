@@ -1,5 +1,6 @@
 // constants/busStages.js
 export const busStages = [
+  // Waiyaki Way
   {
     id: 1,
     name: "Super Metro",
@@ -16,6 +17,8 @@ export const busStages = [
     latitude: -1.2852487667671404,
     longitude: 36.8262655823311,
   },
+
+  // CBD
   {
     id: 3,
     name: "KBS",
@@ -241,9 +244,28 @@ export const busStages = [
     id: 27,
     name: "Muthiga Stage",
     description:
-      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+      "Nairobi Town, Thiong'o, Regen, Muthiga, St.Peter's, Mama Ngina, 87 Kinoo, Cooperative, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
     latitude: -1.2491500958872377,
     longitude: 36.684035064782165,
   },
   // Waiyaki way from muthiga close
+
+  // KAMPALA WAIYAKI WAY
+
+  {
+    id: 28,
+    name: "Kampala Stage",
+    description:
+      "Nairobi Town, Thiong'o, Regen, Muthiga, St.Peter's, Mama Ngina, 87 Kinoo, Cooperative, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2399845841604344,
+    longitude: 36.67544118674808,
+  },
+
+  {
+    id: 29,
+    name: "Kampala Stage",
+    description: "Kikuyu, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.240072025558387,
+    longitude: 36.67520557949987,
+  },
 ];
