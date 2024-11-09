@@ -257,8 +257,8 @@ export const busStages = [
     name: "Kampala Stage",
     description:
       "Nairobi Town, Thiong'o, Regen, Muthiga, St.Peter's, Mama Ngina, 87 Kinoo, Cooperative, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
-    latitude: -1.2399845841604344,
-    longitude: 36.67544118674808,
+    latitude: -1.2402294641763312,
+    longitude: 36.675546835575645,
   },
 
   {

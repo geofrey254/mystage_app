@@ -5,12 +5,9 @@ import {
   LoadScript,
   Marker,
   InfoWindow,
-  DirectionsService,
-  DirectionsRenderer,
 } from "@react-google-maps/api";
 import { busStages } from "@/constants"; // Ensure busStages has an array of bus stages
 import mapStyle from "./mapStyle"; // Your custom map styles
-import { DirectionsResult } from "google.maps";
 
 const containerStyle = {
   width: "100%",
@@ -38,11 +35,10 @@ const Map = () => {
     lat: number;
     lng: number;
   } | null>(null);
-  const [directions, setDirections] =
-    useState<google.maps.DirectionsResult | null>(null);
 
   const googleMapsKey: string =
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+
   const mapRef = useRef<google.maps.Map | null>(null);
 
   const haversineDistance = (coords1, coords2) => {
@@ -102,8 +98,7 @@ const Map = () => {
             alert("An unexpected error occurred.");
             break;
         }
-      },
-      { enableHighAccuracy: true }
+      }
     );
   };
 
@@ -126,17 +121,23 @@ const Map = () => {
       });
 
       // Center the map and zoom in on the nearest stage
-      if (nearestStage && mapRef.current) {
-        mapRef.current.setCenter({
-          lat: nearestStage.latitude,
-          lng: nearestStage.longitude,
-        });
-        mapRef.current.setZoom(18);
+      if (nearestStage) {
+        if (mapRef.current) {
+          mapRef.current.setCenter({
+            lat: nearestStage.latitude,
+            lng: nearestStage.longitude,
+          });
+          mapRef.current.setZoom(18); // Adjust the zoom level as needed
+        }
       }
-    } else if (currentLocation && mapRef.current) {
-      mapRef.current.setCenter(currentLocation);
-      mapRef.current.setZoom(16);
+    } else if (currentLocation) {
+      // Center the map on current location if no filtered stages are available
+      if (mapRef.current) {
+        mapRef.current.setCenter(currentLocation);
+        mapRef.current.setZoom(16); // Default zoom level for current location
+      }
     } else {
+      // Reset selected stage if no stages are available
       setSelectedStage(null);
     }
   }, [currentLocation, filteredStages]);
@@ -150,32 +151,10 @@ const Map = () => {
     );
     setFilteredStages(filtered);
 
+    // If there are no filtered stages, reset the selected stage
     if (filtered.length === 0) {
       setSelectedStage(null);
     }
-  };
-
-  const getDirections = (destination) => {
-    if (!currentLocation) {
-      alert("Unable to get directions without current location");
-      return;
-    }
-
-    const directionsService = new window.google.maps.DirectionsService();
-    directionsService.route(
-      {
-        origin: currentLocation,
-        destination: { lat: destination.latitude, lng: destination.longitude },
-        travelMode: window.google.maps.TravelMode.WALKING,
-      },
-      (result, status) => {
-        if (status === window.google.maps.DirectionsStatus.OK) {
-          setDirections(result);
-        } else {
-          alert("Failed to get directions. Please try again.");
-        }
-      }
-    );
   };
 
   return (
@@ -198,16 +177,22 @@ const Map = () => {
               zoom={16}
               options={{ styles: mapStyle, mapTypeId: "hybrid" }}
               onLoad={(map) => {
-                mapRef.current = map;
+                mapRef.current = map; // Save the map reference
               }}
             >
-              {filteredStages.map((stage) => (
-                <Marker
-                  key={stage.id}
-                  position={{ lat: stage.latitude, lng: stage.longitude }}
-                  onClick={() => setSelectedStage(stage)}
-                />
-              ))}
+              {filteredStages.length > 0 ? (
+                filteredStages.map((stage) => (
+                  <Marker
+                    key={stage.id}
+                    position={{ lat: stage.latitude, lng: stage.longitude }}
+                    onClick={() => setSelectedStage(stage)}
+                  />
+                ))
+              ) : (
+                <div className="text-white text-lg text-center">
+                  No results found.
+                </div>
+              )}
 
               {selectedStage && (
                 <InfoWindow
@@ -216,21 +201,17 @@ const Map = () => {
                     lng: selectedStage.longitude,
                   }}
                   onCloseClick={() => setSelectedStage(null)}
+                  options={{
+                    pixelOffset: new window.google.maps.Size(0, -30),
+                    maxWidth: 2000,
+                  }}
                 >
                   <div className="p-4">
                     <h4 className="font-bold text-lg">{selectedStage.name}</h4>
                     <p className="text-lg">{selectedStage.description}</p>
-                    <button
-                      onClick={() => getDirections(selectedStage)}
-                      className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md"
-                    >
-                      Get Directions
-                    </button>
                   </div>
                 </InfoWindow>
               )}
-
-              {directions && <DirectionsRenderer directions={directions} />}
 
               {currentLocation && (
                 <Marker
