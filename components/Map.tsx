@@ -38,7 +38,8 @@ const Map = () => {
     lat: number;
     lng: number;
   } | null>(null);
-  const [directions, setDirections] = useState<DirectionsResult | null>(null);
+  const [directions, setDirections] =
+    useState<google.maps.DirectionsResult | null>(null);
 
   const googleMapsKey: string =
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
@@ -169,7 +170,7 @@ const Map = () => {
       },
       (result, status) => {
         if (status === window.google.maps.DirectionsStatus.OK) {
-          setDirections(result as DirectionsResult);
+          setDirections(result);
         } else {
           alert("Failed to get directions. Please try again.");
         }
