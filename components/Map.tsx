@@ -263,9 +263,8 @@ const Map = () => {
                   position={currentLocation}
                   icon={{
                     url: "map-marker.png", // Path to your custom marker icon
-                    scaledSize: new window.google.maps.Size(80, 80), // Adjust size if needed
+                    scaledSize: new window.google.maps.Size(60, 60), // Adjust size if needed
                     origin: new window.google.maps.Point(0, 0),
-                    anchor: new window.google.maps.Point(20, 20),
                   }}
                   onClick={() => setSelectedStage(null)}
                 />
