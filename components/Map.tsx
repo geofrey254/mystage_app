@@ -6,6 +6,7 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
+import { MarkerClusterer } from "@googlemaps/markerclusterer"; // Correctly import MarkerClusterer
 import { busStages } from "@/constants"; // Ensure busStages has an array of bus stages
 import mapStyle from "./mapStyle"; // Your custom map styles
 
@@ -40,6 +41,7 @@ const Map = () => {
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
   const mapRef = useRef<google.maps.Map | null>(null);
+  const clustererRef = useRef<MarkerClusterer | null>(null);
 
   const haversineDistance = (coords1, coords2) => {
     const toRad = (value) => (value * Math.PI) / 180;
@@ -157,6 +159,29 @@ const Map = () => {
     }
   };
 
+  const onMapLoad = (map) => {
+    mapRef.current = map;
+
+    // Initialize MarkerClusterer
+    clustererRef.current = new MarkerClusterer({
+      map,
+      markers: [],
+      algorithm: undefined, // Default clustering algorithm
+    });
+
+    // Add markers to the clusterer
+    if (filteredStages.length > 0) {
+      const markers = filteredStages.map(
+        (stage) =>
+          new google.maps.Marker({
+            position: { lat: stage.latitude, lng: stage.longitude },
+            title: stage.name,
+          })
+      );
+      clustererRef.current.addMarkers(markers);
+    }
+  };
+
   return (
     <section className="p-0 md:p-8 bg-[#462f01]">
       <div className="md:rounded-xl border-4 md:border-8 border-[#ffa800] shadow-xl shadow-[#ffa800]">
@@ -176,24 +201,8 @@ const Map = () => {
               center={currentLocation || center}
               zoom={16}
               options={{ styles: mapStyle, mapTypeId: "hybrid" }}
-              onLoad={(map) => {
-                mapRef.current = map; // Save the map reference
-              }}
+              onLoad={onMapLoad} // Pass the onLoad function
             >
-              {filteredStages.length > 0 ? (
-                filteredStages.map((stage) => (
-                  <Marker
-                    key={stage.id}
-                    position={{ lat: stage.latitude, lng: stage.longitude }}
-                    onClick={() => setSelectedStage(stage)}
-                  />
-                ))
-              ) : (
-                <div className="text-white text-lg text-center">
-                  No results found.
-                </div>
-              )}
-
               {selectedStage && (
                 <InfoWindow
                   position={{

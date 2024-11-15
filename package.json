@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@googlemaps/markerclusterer": "^2.5.3",
+    "@googlemaps/markerclustererplus": "^1.2.10",
     "@radix-ui/react-icons": "^1.3.0",
     "@react-google-maps/api": "^2.19.3",
     "class-variance-authority": "^0.7.0",
