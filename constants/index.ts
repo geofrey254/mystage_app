@@ -527,4 +527,52 @@ export const busStages = [
     latitude: -1.264202932372532,
     longitude: 36.754611588435836,
   },
+
+  // Communications Authority
+  {
+    id: 56,
+    name: "Communications Authority",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Waruku, Mountain View, CBD,  Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2635459570856389,
+    longitude: 36.75886221398779,
+  },
+
+  // Waruku
+  {
+    id: 57,
+    name: "Waruku",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Mountain View, CBD,  Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2627478588967935,
+    longitude: 36.764334934943825,
+  },
+
+  {
+    id: 58,
+    name: "Waruku",
+    description:
+      "Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2630344681692978,
+    longitude: 36.7644002455728,
+  },
+
+  // Nairobi School
+  {
+    id: 59,
+    name: "Nairobi School",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Mountain View, CBD,  Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2600364329281732,
+    longitude: 36.7705145292429,
+  },
+
+  {
+    id: 60,
+    name: "Nairobi School",
+    description:
+      "Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.260506368849232,
+    longitude: 36.77034085249165,
+  },
 ];
