@@ -9,6 +9,7 @@ import {
 import { MarkerClusterer } from "@googlemaps/markerclusterer"; // Correctly import MarkerClusterer
 import { busStages } from "@/constants"; // Ensure busStages has an array of bus stages
 import mapStyle from "./mapStyle"; // Your custom map styles
+import { MapPin } from "lucide-react"; // Import the desired Lucide icon
 
 const containerStyle = {
   width: "100%",
@@ -122,24 +123,21 @@ const Map = () => {
         return currDistance < prevDistance ? curr : prev;
       });
 
-      // Center the map and zoom in on the nearest stage
       if (nearestStage) {
         if (mapRef.current) {
           mapRef.current.setCenter({
             lat: nearestStage.latitude,
             lng: nearestStage.longitude,
           });
-          mapRef.current.setZoom(18); // Adjust the zoom level as needed
+          mapRef.current.setZoom(18);
         }
       }
     } else if (currentLocation) {
-      // Center the map on current location if no filtered stages are available
       if (mapRef.current) {
         mapRef.current.setCenter(currentLocation);
-        mapRef.current.setZoom(16); // Default zoom level for current location
+        mapRef.current.setZoom(16);
       }
     } else {
-      // Reset selected stage if no stages are available
       setSelectedStage(null);
     }
   }, [currentLocation, filteredStages]);
@@ -153,14 +151,12 @@ const Map = () => {
     );
     setFilteredStages(filtered);
 
-    // If there are no filtered stages, reset the selected stage
     if (filtered.length === 0) {
       setSelectedStage(null);
     }
   };
 
-  // to delete
-  const onMapLoad = (map: google.maps.Map) => {
+  const onMapLoad = (map) => {
     mapRef.current = map;
 
     if (clustererRef.current) {
@@ -223,28 +219,14 @@ const Map = () => {
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={currentLocation || center}
-              zoom={16}
+              zoom={currentLocation ? 16 : 14}
               options={{
                 styles: mapStyle,
                 mapTypeId: "hybrid",
                 mapTypeControl: false,
               }}
-              onLoad={onMapLoad}
+              onLoad={onMapLoad} // onLoad to initialize clustering
             >
-              {filteredStages.length > 0 ? (
-                filteredStages.map((stage) => (
-                  <Marker
-                    key={stage.id}
-                    position={{ lat: stage.latitude, lng: stage.longitude }}
-                    onClick={() => setSelectedStage(stage)}
-                  />
-                ))
-              ) : (
-                <div className="text-white text-lg text-center">
-                  No results found.
-                </div>
-              )}
-
               {selectedStage && (
                 <InfoWindow
                   position={{
@@ -257,8 +239,10 @@ const Map = () => {
                     maxWidth: 2000,
                   }}
                 >
-                  <div className="p-4">
-                    <h4 className="font-bold text-lg">{selectedStage.name}</h4>
+                  <div className="p-4 flex flex-col gap-4">
+                    <h4 className="font-bold text-lg text-center">
+                      {selectedStage.name}
+                    </h4>
                     <div className="bg-[#ffaa0069] grid grid-cols-2 gap-y-2 md:grid-cols-3 md:gap-y-1 md:gap-x-2 p-4 text-black rounded-lg shadow-md">
                       {selectedStage?.description
                         .split(",")
@@ -277,9 +261,7 @@ const Map = () => {
                 <Marker
                   position={currentLocation}
                   icon={{
-                    url: "map-marker.png", // Path to your custom marker icon
-                    scaledSize: new window.google.maps.Size(60, 60), // Adjust size if needed
-                    origin: new window.google.maps.Point(0, 0),
+                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
                   }}
                   onClick={() => setSelectedStage(null)}
                 />
