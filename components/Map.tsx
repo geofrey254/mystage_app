@@ -41,7 +41,7 @@ const Map = () => {
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
   const mapRef = useRef<google.maps.Map | null>(null);
-  const clustererRef = useRef<MarkerClusterer | null>(null);
+  const clustererRef = useRef<MarkerClusterer | null>(null); // Ref for MarkerClusterer
 
   const haversineDistance = (coords1, coords2) => {
     const toRad = (value) => (value * Math.PI) / 180;
@@ -122,24 +122,21 @@ const Map = () => {
         return currDistance < prevDistance ? curr : prev;
       });
 
-      // Center the map and zoom in on the nearest stage
       if (nearestStage) {
         if (mapRef.current) {
           mapRef.current.setCenter({
             lat: nearestStage.latitude,
             lng: nearestStage.longitude,
           });
-          mapRef.current.setZoom(18); // Adjust the zoom level as needed
+          mapRef.current.setZoom(18);
         }
       }
     } else if (currentLocation) {
-      // Center the map on current location if no filtered stages are available
       if (mapRef.current) {
         mapRef.current.setCenter(currentLocation);
-        mapRef.current.setZoom(16); // Default zoom level for current location
+        mapRef.current.setZoom(16);
       }
     } else {
-      // Reset selected stage if no stages are available
       setSelectedStage(null);
     }
   }, [currentLocation, filteredStages]);
@@ -153,7 +150,6 @@ const Map = () => {
     );
     setFilteredStages(filtered);
 
-    // If there are no filtered stages, reset the selected stage
     if (filtered.length === 0) {
       setSelectedStage(null);
     }
@@ -163,23 +159,40 @@ const Map = () => {
     mapRef.current = map;
 
     // Initialize MarkerClusterer
-    clustererRef.current = new MarkerClusterer({
-      map,
-      markers: [],
-      algorithm: undefined, // Default clustering algorithm
+    if (clustererRef.current) {
+      clustererRef.current.clearMarkers(); // Clear previous markers before adding new ones
+    }
+
+    const markers = filteredStages.map((stage) => {
+      const marker = new google.maps.Marker({
+        position: { lat: stage.latitude, lng: stage.longitude },
+        title: stage.name,
+      });
+
+      marker.addListener("click", () => {
+        setSelectedStage(stage);
+      });
+
+      return marker;
     });
 
-    // Add markers to the clusterer
-    if (filteredStages.length > 0) {
+    clustererRef.current = new MarkerClusterer({
+      map,
+      markers,
+    });
+  };
+
+  useEffect(() => {
+    if (mapRef.current && clustererRef.current) {
+      clustererRef.current.clearMarkers(); // Clear existing markers
       const markers = filteredStages.map((stage) => {
         const marker = new google.maps.Marker({
           position: { lat: stage.latitude, lng: stage.longitude },
           title: stage.name,
         });
 
-        // Attach an onClick handler for this marker
         marker.addListener("click", () => {
-          setSelectedStage(stage); // Set the clicked stage as the selected stage
+          setSelectedStage(stage);
         });
 
         return marker;
@@ -187,7 +200,7 @@ const Map = () => {
 
       clustererRef.current.addMarkers(markers);
     }
-  };
+  }, [filteredStages]);
 
   return (
     <section className="p-0 md:p-8 bg-[#462f01]">
@@ -208,7 +221,7 @@ const Map = () => {
               center={currentLocation || center}
               zoom={16}
               options={{ styles: mapStyle, mapTypeId: "hybrid" }}
-              onLoad={onMapLoad} // Pass the onLoad function
+              onLoad={onMapLoad} // onLoad to initialize clustering
             >
               {selectedStage && (
                 <InfoWindow
@@ -219,22 +232,12 @@ const Map = () => {
                   onCloseClick={() => setSelectedStage(null)}
                   options={{
                     pixelOffset: new window.google.maps.Size(0, -30),
-                    maxWidth: 300, // Adjust width for better responsiveness
+                    maxWidth: 2000,
                   }}
                 >
-                  <div className="p-4 bg-white rounded-lg shadow-lg">
-                    <h4 className="text-lg font-semibold text-gray-800">
-                      {selectedStage.name}
-                    </h4>
-                    <p className="text-sm text-gray-600 mt-2">
-                      {selectedStage.description}
-                    </p>
-                    <button
-                      className="mt-4 px-4 py-2 bg-[#ffa800] text-white text-sm rounded-md shadow hover:bg-[#e69500] transition"
-                      onClick={() => setSelectedStage(null)}
-                    >
-                      Close
-                    </button>
+                  <div className="p-4">
+                    <h4 className="font-bold text-lg">{selectedStage.name}</h4>
+                    <p className="text-lg">{selectedStage.description}</p>
                   </div>
                 </InfoWindow>
               )}
