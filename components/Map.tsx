@@ -9,6 +9,7 @@ import {
 import { MarkerClusterer } from "@googlemaps/markerclusterer"; // Correctly import MarkerClusterer
 import { busStages } from "@/constants"; // Ensure busStages has an array of bus stages
 import mapStyle from "./mapStyle"; // Your custom map styles
+import { MapPin } from "lucide-react"; // Import the desired Lucide icon
 
 const containerStyle = {
   width: "100%",
@@ -213,7 +214,7 @@ const Map = () => {
                 placeholder="Where are you headed to?"
                 value={searchTerm}
                 onChange={handleSearchChange}
-                className="z-10 bg-[#0000006e] bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 p-2 md:p-6 rounded-md ps-8 border-2 border-[#ffa800] focus:outline-none focus:ring-0 focus:border-transparent shadow-md shadow-[#3a2b0d] w-[50vh] md:w-[80vh] h-[7vh] md:h-[5vh] placeholder:text-white animate-bounce focus:animate-none"
+                className="z-10 bg-[#0000006e] bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 p-2 md:p-6 rounded-md ps-8 border-2 border-[#ffa800] focus:outline-none focus:ring-0 focus:border-transparent shadow-md shadow-[#3a2b0d] w-[50vh] md:w-[80vh] h-[7vh] md:h-[5vh] placeholder:text-white animate-bounce focus:animate-none text-white"
               />
             </div>
             <GoogleMap
@@ -261,7 +262,10 @@ const Map = () => {
                 <Marker
                   position={currentLocation}
                   icon={{
-                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                    url: "map-marker.png", // Path to your custom marker icon
+                    scaledSize: new window.google.maps.Size(80, 80), // Adjust size if needed
+                    origin: new window.google.maps.Point(0, 0),
+                    anchor: new window.google.maps.Point(20, 20),
                   }}
                   onClick={() => setSelectedStage(null)}
                 />
