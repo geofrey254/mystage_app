@@ -12,7 +12,7 @@ import mapStyle from "./mapStyle"; // Your custom map styles
 
 const containerStyle = {
   width: "100%",
-  height: "90vh",
+  height: "80vh",
 };
 
 const center = {
@@ -207,7 +207,7 @@ const Map = () => {
       <div className="md:rounded-xl border-4 md:border-8 border-[#ffa800] shadow-xl shadow-[#ffa800]">
         <LoadScript googleMapsApiKey={googleMapsKey}>
           <div className="relative">
-            <div className="absolute w-full flex justify-center px-3 py-2 md:py-4 md:px-4">
+            <div className="absolute w-full flex justify-center bottom-0 px-3 py-2 md:py-4 md:px-4">
               <input
                 type="text"
                 placeholder="Where are you headed to?"
