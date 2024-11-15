@@ -220,7 +220,11 @@ const Map = () => {
               mapContainerStyle={containerStyle}
               center={currentLocation || center}
               zoom={currentLocation ? 16 : 14}
-              options={{ styles: mapStyle, mapTypeId: "hybrid" }}
+              options={{
+                styles: mapStyle,
+                mapTypeId: "hybrid",
+                mapTypeControl: false,
+              }}
               onLoad={onMapLoad} // onLoad to initialize clustering
             >
               {selectedStage && (
