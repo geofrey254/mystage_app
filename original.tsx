@@ -164,7 +164,7 @@ const Map = () => {
     }
 
     const markers = filteredStages.map((stage) => {
-      const marker = new google.maps.Marker({
+      const marker = new google.maps.marker.AdvancedMarkerElement({
         position: { lat: stage.latitude, lng: stage.longitude },
         title: stage.name,
       });
