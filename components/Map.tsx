@@ -219,7 +219,7 @@ const Map = () => {
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={currentLocation || center}
-              zoom={14}
+              zoom={currentLocation ? 16 : 14}
               options={{ styles: mapStyle, mapTypeId: "hybrid" }}
               onLoad={onMapLoad} // onLoad to initialize clustering
             >
