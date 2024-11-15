@@ -171,13 +171,20 @@ const Map = () => {
 
     // Add markers to the clusterer
     if (filteredStages.length > 0) {
-      const markers = filteredStages.map(
-        (stage) =>
-          new google.maps.Marker({
-            position: { lat: stage.latitude, lng: stage.longitude },
-            title: stage.name,
-          })
-      );
+      const markers = filteredStages.map((stage) => {
+        const marker = new google.maps.Marker({
+          position: { lat: stage.latitude, lng: stage.longitude },
+          title: stage.name,
+        });
+
+        // Attach an onClick handler for this marker
+        marker.addListener("click", () => {
+          setSelectedStage(stage); // Set the clicked stage as the selected stage
+        });
+
+        return marker;
+      });
+
       clustererRef.current.addMarkers(markers);
     }
   };
@@ -212,12 +219,22 @@ const Map = () => {
                   onCloseClick={() => setSelectedStage(null)}
                   options={{
                     pixelOffset: new window.google.maps.Size(0, -30),
-                    maxWidth: 2000,
+                    maxWidth: 300, // Adjust width for better responsiveness
                   }}
                 >
-                  <div className="p-4">
-                    <h4 className="font-bold text-lg">{selectedStage.name}</h4>
-                    <p className="text-lg">{selectedStage.description}</p>
+                  <div className="p-4 bg-white rounded-lg shadow-lg">
+                    <h4 className="text-lg font-semibold text-gray-800">
+                      {selectedStage.name}
+                    </h4>
+                    <p className="text-sm text-gray-600 mt-2">
+                      {selectedStage.description}
+                    </p>
+                    <button
+                      className="mt-4 px-4 py-2 bg-[#ffa800] text-white text-sm rounded-md shadow hover:bg-[#e69500] transition"
+                      onClick={() => setSelectedStage(null)}
+                    >
+                      Close
+                    </button>
                   </div>
                 </InfoWindow>
               )}
