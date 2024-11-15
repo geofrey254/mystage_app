@@ -571,8 +571,93 @@ export const busStages = [
     id: 60,
     name: "Nairobi School",
     description:
-      "Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+      "Waruku,Communications Authority, Kianda, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
     latitude: -1.260506368849232,
     longitude: 36.77034085249165,
+  },
+
+  // ABC PLACE
+  {
+    id: 61,
+    name: "ABC Place",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Safaricom, Mountain View, CBD, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2589627406394253,
+    longitude: 36.77608359148884,
+  },
+
+  {
+    id: 62,
+    name: "ABC Place",
+    description:
+      "Waruku, Nairobi School, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2590842895389855,
+    longitude: 36.778151340268636,
+  },
+
+  // James Gichuru
+  {
+    id: 63,
+    name: "ABC Place",
+    description:
+      "Waruku, Nairobi School, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2595606717746315,
+    longitude: 36.775318240172496,
+  },
+
+  // Safaricom/Agha Khan
+  {
+    id: 64,
+    name: "Safaricom/Agha Khan",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Mountain View, CBD, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2590665525229454,
+    longitude: 36.782920714838845,
+  },
+
+  {
+    id: 65,
+    name: "Agha Khan High School",
+    description:
+      "ABC Place, Waruku, Nairobi School, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2594409185530546,
+    longitude: 36.783079045483674,
+  },
+
+  {
+    id: 66,
+    name: "Westlands DC/Church Road/Safaricom",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Mountain View, CBD, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2595944631155693,
+    longitude: 36.78723477783059,
+  },
+
+  {
+    id: 67,
+    name: "Safaricom",
+    description:
+      "ABC Place, Waruku, Nairobi School, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2597676345455016,
+    longitude: 36.78560106558712,
+  },
+
+  // Brookside Grove
+  {
+    id: 68,
+    name: "Brookside Grove",
+    description:
+      "Nairobi Town, Westlands, GPO, Museum Hill, Mountain View, CBD, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2602657723774282,
+    longitude: 36.79194707644842,
+  },
+
+  {
+    id: 69,
+    name: "Brookside",
+    description:
+      "Safaricom, ABC Place, Waruku, Nairobi School, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2608231098382865,
+    longitude: 36.79173820145316,
   },
 ];
