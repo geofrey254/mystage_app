@@ -213,7 +213,7 @@ const Map = () => {
                 placeholder="Where are you headed to?"
                 value={searchTerm}
                 onChange={handleSearchChange}
-                className="z-10 p-2 md:p-6 rounded-md ps-8 border-2 border-[#ffa800] focus:outline-none focus:ring-0 focus:border-transparent shadow-md shadow-[#3a2b0d] w-[50vh] md:w-[80vh] h-[7vh] md:h-[5vh]"
+                className="z-10 bg-[#0000006e] bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 p-2 md:p-6 rounded-md ps-8 border-2 border-[#ffa800] focus:outline-none focus:ring-0 focus:border-transparent shadow-md shadow-[#3a2b0d] w-[50vh] md:w-[80vh] h-[7vh] md:h-[5vh] placeholder:text-white animate-bounce focus:animate-none"
               />
             </div>
             <GoogleMap
