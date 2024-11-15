@@ -721,7 +721,6 @@ export const busStages = [
   },
 
   // ICEA
-  // ,
   {
     id: 76,
     name: "ICEA",
@@ -733,7 +732,7 @@ export const busStages = [
 
   {
     id: 77,
-    name: "Goodman Plaza",
+    name: "ICEA",
     description:
       "westlands, Safaricom, ABC Place, Waruku, Nairobi School, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
     latitude: -1.2683841313556201,
