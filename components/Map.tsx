@@ -235,9 +235,20 @@ const Map = () => {
                     maxWidth: 2000,
                   }}
                 >
-                  <div className="p-4">
-                    <h4 className="font-bold text-lg">{selectedStage.name}</h4>
-                    <p className="text-lg">{selectedStage.description}</p>
+                  <div className="p-4 flex flex-col gap-4">
+                    <h4 className="font-bold text-lg text-center">
+                      {selectedStage.name}
+                    </h4>
+                    <div className="bg-[#ffaa0069] grid grid-cols-2 gap-y-2 md:grid-cols-3 md:gap-y-1 md:gap-x-2 p-4 text-black rounded-lg shadow-md">
+                      {selectedStage?.description
+                        .split(",")
+                        .map((stage, index) => (
+                          <p key={index} className="text-sm flex">
+                            <span className="hidden md:flex">{"📌"}</span>
+                            {stage.trim()}
+                          </p>
+                        ))}
+                    </div>
                   </div>
                 </InfoWindow>
               )}
