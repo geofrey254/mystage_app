@@ -277,7 +277,9 @@ const Map = () => {
                 <Marker
                   position={currentLocation}
                   icon={{
-                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                    url: "map-marker.png", // Path to your custom marker icon
+                    scaledSize: new window.google.maps.Size(60, 60), // Adjust size if needed
+                    origin: new window.google.maps.Point(0, 0),
                   }}
                   onClick={() => setSelectedStage(null)}
                 />
