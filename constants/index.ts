@@ -234,7 +234,7 @@ export const busStages = [
     id: 26,
     name: "Kikuyu Town Stage",
     description:
-      "Nairobi Town, Muthiga, Regen, Mlango, Gitaru, Kampala, Uthiru, Cooperative, Westlands, GPO, Museum Hill, Safaricom, ABC Place, CAK, Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+      "Nairobi Town, Muthiga, Regen, Mlango, Gitaru, Kampala, Uthiru, Cooperation, Westlands, GPO, Museum Hill, Safaricom, ABC Place, CAK, Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
     latitude: -1.2428367407487513,
     longitude: 36.664749462217735,
   },
@@ -244,7 +244,7 @@ export const busStages = [
     id: 27,
     name: "Muthiga Stage",
     description:
-      "Nairobi Town, Thiong'o, Regen, Muthiga, St.Peter's, Mama Ngina, 87 Kinoo, Cooperative, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+      "Nairobi Town, Thiong'o, Regen, Muthiga, St.Peter's, Mama Ngina, 87 Kinoo, Cooperation, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
     latitude: -1.2491500958872377,
     longitude: 36.684035064782165,
   },
@@ -256,7 +256,7 @@ export const busStages = [
     id: 28,
     name: "Kampala Stage",
     description:
-      "Nairobi Town, Thiong'o, Regen, Muthiga, St.Peter's, Mama Ngina, 87 Kinoo, Cooperative, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+      "Nairobi Town, Thiong'o, Regen, Muthiga, St.Peter's, Mama Ngina, 87 Kinoo, Cooperation, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
     latitude: -1.2402294641763312,
     longitude: 36.675546835575645,
   },
@@ -267,5 +267,167 @@ export const busStages = [
     description: "Kikuyu, Gitaru, Zambezi, Flyover, Wangige",
     latitude: -1.240072025558387,
     longitude: 36.67520557949987,
+  },
+
+  // Muthiga to kikuyu
+  {
+    id: 30,
+    name: "Muthiga",
+    description:
+      "Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2493991867963,
+    longitude: 36.68404781063383,
+  },
+
+  // Mama Ngina
+  {
+    id: 31,
+    name: "Kinoo Mama Ngina",
+    description:
+      "Muthiga, St.Peter's, Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.256498937531195,
+    longitude: 36.69694785218061,
+  },
+
+  {
+    id: 32,
+    name: "Kinoo Mama Ngina",
+    description:
+      "Nairobi Town, Thiong'o, 87 Kinoo, Cooperation, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2563128136972488,
+    longitude: 36.69697353592587,
+  },
+
+  // Kinoo 87
+  {
+    id: 33,
+    name: "Kinoo 87",
+    description:
+      "Nairobi Town, Thiong'o, Cooperation, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2576425615011522,
+    longitude: 36.70078594712699,
+  },
+
+  {
+    id: 34,
+    name: "Kinoo 87",
+    description:
+      "Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2578318300452844,
+    longitude: 36.700628720263126,
+  },
+
+  // Muhuri Road Junction
+  {
+    id: 35,
+    name: "Muhuri Road Junction",
+    description:
+      "Nairobi Town, Thiong'o, Cooperation, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2585943420515737,
+    longitude: 36.703421659274134,
+  },
+
+  {
+    id: 36,
+    name: "Muhuri Road Junction",
+    description:
+      "Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2587248245484295,
+    longitude: 36.703175296949055,
+  },
+
+  // Cooperation
+  {
+    id: 36,
+    name: "Cooperation",
+    description:
+      "Nairobi Town, Thiong'o, Uthiru, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2601507056676777,
+    longitude: 36.710310060276875,
+  },
+
+  {
+    id: 37,
+    name: "Cooperation",
+    description:
+      "Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.260381628825368,
+    longitude: 36.71029827187926,
+  },
+
+  // Uthiru Junction
+  {
+    id: 38,
+    name: "Uthiru Junction",
+    description:
+      "Nairobi Town, Thiong'o, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2602513048180775,
+    longitude: 36.717696907696066,
+  },
+
+  {
+    id: 39,
+    name: "Uthiru Junction",
+    description:
+      "Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.260661094706222,
+    longitude: 36.7176283705509,
+  },
+
+  // Marigu-ini
+  {
+    id: 40,
+    name: "Marigu-ini",
+    description:
+      "Nairobi Town, Thiong'o, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.259946873653481,
+    longitude: 36.719234050906465,
+  },
+
+  {
+    id: 41,
+    name: "Marigu-ini",
+    description:
+      "Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.260363822833707,
+    longitude: 36.71911741368445,
+  },
+
+  // Ndumbuini Junction
+  {
+    id: 42,
+    name: "Ndumbuini Junction",
+    description:
+      "Nairobi Town, Thiong'o, Nne Soko/N Market, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2600111483978633,
+    longitude: 36.72225021952481,
+  },
+
+  {
+    id: 43,
+    name: "Ndumbuini Junction",
+    description:
+      "Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2604521229887509,
+    longitude: 36.722223705399664,
+  },
+
+  // Nne Soko/N Market
+  {
+    id: 44,
+    name: "Nne Soko/N Market",
+    description:
+      "Nairobi Town, Thiong'o, Westlands, GPO, Museum Hill, Safaricom, ABC Place, Communications Authority(CAK), Waruku, Kangemi, CBD, Nairobi Town, Museum Hill, Kempinski, University of Nairobi(UON)",
+    latitude: -1.2633403153508138,
+    longitude: 36.72940920774472,
+  },
+
+  {
+    id: 45,
+    name: "Nne Soko/N Market",
+    description:
+      "Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.263979832933171,
+    longitude: 36.72983908268533,
   },
 ];
