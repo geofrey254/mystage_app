@@ -742,7 +742,7 @@ export const busStages = [
 
   // Chiromo
   {
-    id: 76,
+    id: 78,
     name: "Chiromo",
     description:
       "Nairobi Town, GPO, Museum Hill, Mountain View, CBD, Museum Hill, Kempinski, Chiromo, University of Nairobi(UON)",
@@ -751,11 +751,11 @@ export const busStages = [
   },
 
   {
-    id: 77,
-    name: "Goodman Plaza",
+    id: 79,
+    name: "Chiromo/Riverside",
     description:
-      "westlands, Safaricom, ABC Place, Waruku, Nairobi School, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
-    latitude: -1.2683841313556201,
-    longitude: 36.80500574883758,
+      "Westlands, Safaricom, ABC Place, Waruku, Nairobi School, Sodom, Kianda, Communications Authority, Posta, Mountain View, Nne Soko/N Market, Kabete Police, Ndumbuini-Junction, Marigu-ini, Uthiru, Cooperation, Muhuri Road Junction, Kinoo 87, Kinoo Mama Ngina, Muthiga, St.Peter's, Kikuyu, Regen, Kabete Police, Marigu-ini, Ndumbuini-Junction,  Rungiri, Kampala, Limuru, Gitaru, Zambezi, Flyover, Wangige",
+    latitude: -1.2707844296832935,
+    longitude: 36.807118433105686,
   },
 ];
